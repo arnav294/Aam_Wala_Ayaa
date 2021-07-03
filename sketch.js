@@ -40,13 +40,11 @@ mango17=new mango(1050,50,35);
 mango18=new mango(960,200,44);
 
 
-
 treeObj=new tree(1050,580);
 groundObject=new ground(width/2,600,width,20);
-sling=new Keeda(stoneObj.body,{x:240,y:460})  
+sling=new Keeda(stoneObj.body,{x:320,y:460})  
 
-gamestate = 1;
-score = 0;
+
 
 Engine.run(engine);
  
@@ -54,19 +52,13 @@ Engine.run(engine);
 
 function draw() {
 
-  background("rgb(73, 234, 255)");
+  background("green") 
 
-  if(gamestate === 1){
-  textSize(30);
-  stroke("white");
-  textFont("Lucida Calligraphy");
-  fill('rgb(249, 59, 173)');
-  textSize(30);
-  text("Press Space To Get A New Stone To Throw!",50 ,200);
-  text("Drag the stone behind and then release.",50 ,100);
-  image(boy,200,380,200,300);
   
-  treeObj.display();
+  image(boy,200,380,150,200);
+  
+  treeObj.display()
+
   stoneObj.display();
   mango1.display();
   mango2.display();
@@ -85,6 +77,7 @@ function draw() {
   mango16.display();
   mango17.display();
   mango18.display();
+  
   
   stoneObj.display();
 
@@ -111,7 +104,7 @@ function draw() {
 
   }
 
-}
+
 
 function mouseDragged(){
 	Matter.Body.setPosition(stoneObj.body, {x:mouseX, y:mouseY}) 
@@ -123,7 +116,7 @@ function mouseReleased(){
 
 function keyPressed() {
 	if (keyCode === 32) {
-    Matter.Body.setPosition(stoneObj.body, {x:235, y:420}) 
+    Matter.Body.setPosition(stoneObj.body, {x:325, y:420}) 
 	  sling.attach(stoneObj.body);
 	}
 }

@@ -4,7 +4,7 @@ class mango{
 		var options={
 			isStatic:true,
 			restitution :0,
-            friction :1,
+            friction :0,
 			}
 		this.x=x;
 		this.y=y;
